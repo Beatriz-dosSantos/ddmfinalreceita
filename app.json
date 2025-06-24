@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "receitas"
+        "projectId": "670837ed-9f0c-41eb-83c5-f5dea6a6db93"
       }
     },
     "plugins": ["expo-router", "expo-font"]
