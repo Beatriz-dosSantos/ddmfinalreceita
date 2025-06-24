@@ -1,8 +1,6 @@
-import 'react-native-get-random-values'; // necessário para uuid no Expo
+import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase/firebase';
-import * as FileSystem from 'expo-file-system';
+import { db } from '../../firebase/firebase';
 import {
   collection,
   addDoc,
@@ -13,6 +11,7 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { Recipe } from '../types/recipe';
+import { uploadToCloudinary } from './cloudinary';
 
 const COLLECTION_NAME = 'receitas';
 
@@ -50,28 +49,3 @@ export const deleteRecipeById = async (id: string): Promise<void> => {
   const docRef = doc(db, COLLECTION_NAME, id);
   await deleteDoc(docRef);
 };
-
-export async function uploadImageAsync(uri: string): Promise<string> {
-  try {
-    console.log("Fazendo upload da imagem:", uri);
-
-    const fileInfo = await FileSystem.getInfoAsync(uri);
-    if (!fileInfo.exists) {
-      throw new Error('Arquivo não encontrado: ' + uri);
-    }
-
-    const response = await fetch(uri);
-    const blob = await response.blob();
-
-    const imageRef = ref(storage, `images/${uuid()}`);
-    const snapshot = await uploadBytes(imageRef, blob);
-    const downloadURL = await getDownloadURL(snapshot.ref);
-
-    console.log("Imagem salva em:", downloadURL);
-    return downloadURL;
-  } catch (error) {
-    console.error('Erro ao fazer upload da imagem:', error);
-    throw error;
-  }
-}
-

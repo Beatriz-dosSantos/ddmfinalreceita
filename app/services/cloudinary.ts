@@ -1,7 +1,7 @@
 export const uploadToCloudinary = async (
   uri: string,
-  preset = 'receitasApp',
-  cloudName = 'dtjycztnd'
+  preset = 'receitasApp',          
+  cloudName = 'dtjycztnd'        
 ): Promise<string> => {
   const data = new FormData();
   data.append('file', {
