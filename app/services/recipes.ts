@@ -1,5 +1,4 @@
 import 'react-native-get-random-values';
-import { v4 as uuid } from 'uuid';
 import { db } from '../../firebase/firebase';
 import {
   collection,
@@ -11,7 +10,6 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { Recipe } from '../types/recipe';
-import { uploadToCloudinary } from './cloudinary';
 
 const COLLECTION_NAME = 'receitas';
 

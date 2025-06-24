@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Recipe } from "../types/recipe";
-import { getRecipeById } from "./recipes"; // deve existir essa função
+import { getRecipeById } from "./recipes";
 
 const FAVORITES_KEY = "@receitas_favoritas_objetos";
 

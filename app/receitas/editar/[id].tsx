@@ -13,7 +13,7 @@ import {
 import * as ImagePicker from 'expo-image-picker';
 import { getRecipeById, updateRecipe } from '../../services/recipes';
 import { uploadToCloudinary } from '../../services/cloudinary';
-import { Recipe } from '../../types/recipe';
+//import { Recipe } from '../../types/recipe';
 import ErroCamposObrigatoriosModal from '../../components/ErroCamposObrigatoriosModal ';
 import SucessoReceitaModal from '../../components/SucessoReceitaModal';
 

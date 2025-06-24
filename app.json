@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EasyCook",
-    "slug": "easycook",
+    "name": "Receita",
+    "slug": "receita",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,7 +17,7 @@
       "**/*"
     ],
     "android": {
-      "package": "com.seunome.easycook",
+      "package": "com.seunome.receita",
       "versionCode": 1,
       "compileSdkVersion": 34
     },
